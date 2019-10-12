@@ -106,7 +106,6 @@ public class AEstrela {
         // Adds the root to the list of pending nodes
         open.add(root);
         openSet.put(init, root);
-        System.out.println(heuristic.getClass());
         this.resetNodesStatistics();
         Node solution = null;
         final int timeout = getTimeout();
@@ -176,7 +175,8 @@ public class AEstrela {
 
         this.setExploredNodes(closeSet.size());
         this.setPendingNodes(openSet.size());
-        this.setMemoryUsed(MemoryAgent.getDeepSizeOf(closeSet) + MemoryAgent.getDeepSizeOf(openSet));
+
+        //this.setMemoryUsed(MemoryAgent.getDeepSizeOf(closeSet) + MemoryAgent.getDeepSizeOf(openSet));
         this.setSearchingTime(time);
 
         // return the search computed or null if no search was found
@@ -349,6 +349,7 @@ public class AEstrela {
         Objects.requireNonNull(codedProblem);
         final Node solutionNode = search(codedProblem);
         if (solutionNode != null) {
+
             return extractPlan(solutionNode, codedProblem);
         } else {
             return null;

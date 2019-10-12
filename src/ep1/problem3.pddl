@@ -6,8 +6,7 @@
 
 (:objects
 room1 room2 - room
-box1 box2 box3 box4 box5 box6 box7 box8 box9
-box10 - box
+box1 box2 box3 - box
 left right - arm)
 
 (:init
@@ -15,7 +14,6 @@ left right - arm)
 (box-at box1 room1)
 (box-at box2 room1)
 (box-at box3 room1)
-(box-at box4 room1)
 (free left)
 (free right))
 
@@ -24,4 +22,4 @@ left right - arm)
 (box-at box1 room2)
 (box-at box2 room2)
 (box-at box3 room2)
-(box-at box4 room2))))
+)))

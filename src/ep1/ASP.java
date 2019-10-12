@@ -29,8 +29,6 @@ import fr.uga.pddl4j.util.SequentialPlan;
 import fr.uga.pddl4j.planners.statespace.search.strategy.Node;
 import fr.uga.pddl4j.planners.statespace.search.strategy.NodeComparator;
 
-
-
 /**
  * This class implements a simple forward planner based on A* algorithm.
  *
@@ -54,14 +52,11 @@ public final class ASP extends AbstractStateSpacePlanner {
 		this.arguments = arguments;
 	}
 
-	
-	
 	@Override
 	public Plan search(final CodedProblem problem) {
 		throw new UnsupportedOperationException();
 	}
-	
-	
+
 	/**
 	 * The main method of the <code>ASP</code> example. The command line syntax is
 	 * as follow:
@@ -84,77 +79,108 @@ public final class ASP extends AbstractStateSpacePlanner {
 	 * @param args the arguments of the command line.
 	 */
 	public static void main(String[] args) {
+
 		args = new String[4];
+		long[][] matrizResposta;
 		args[0] = "-o";
 		args[1] = "C:\\Users\\Avell\\eclipse-workspace\\TPIA\\src\\ep1\\domain.pddl";
 		args[2] = "-f";
-		args[3] = "C:\\Users\\Avell\\eclipse-workspace\\TPIA\\src\\ep1\\problem.pddl";
-		final Properties arguments = ASP.parseCommandLine(args);
-		if (arguments == null) {
-			ASP.printUsage();
-			System.exit(0);
+		for (int i = 1; i <= 11; i++) {
+			if(i == 11) {
+				args[1] = "C:\\Users\\Avell\\eclipse-workspace\\TPIA\\src\\ep1\\domain2.pddl";
+				System.out.println("***************************** tyreworld-domain *****************************************");
+			}else {
+				System.out.println("***************************** robot-box-domain *****************************************");
+			}
+
+			args[3] = "C:\\Users\\Avell\\eclipse-workspace\\TPIA\\src\\ep1\\problem" + i + ".pddl";
+			System.out.println(args[3]);
+			final Properties arguments = ASP.parseCommandLine(args);
+			if (arguments == null) {
+				ASP.printUsage();
+				System.exit(0);
+			}
+
+			final ASP planner = new ASP(arguments);
+			final ProblemFactory factory = ProblemFactory.getInstance();
+
+			File domain = (File) arguments.get(Planner.DOMAIN);
+			File problem = (File) arguments.get(Planner.PROBLEM);
+			ErrorManager errorManager = null;
+			try {
+				errorManager = factory.parse(domain, problem);
+			} catch (IOException e) {
+				Planner.getLogger().trace("\nunexpected error when parsing the PDDL planning problem description.");
+				System.exit(0);
+			}
+
+			if (!errorManager.isEmpty()) {
+				errorManager.printAll();
+				System.exit(0);
+			} else {
+				Planner.getLogger().trace("\nparsing domain file done successfully");
+				Planner.getLogger().trace("\nparsing problem file done successfully\n");
+			}
+
+			final CodedProblem pb = factory.encode();
+			Planner.getLogger().trace("\nencoding problem done successfully (" + pb.getOperators().size() + " ops, "
+					+ pb.getRelevantFacts().size() + " facts)\n");
+
+			if (!pb.isSolvable()) {
+				Planner.getLogger().trace(String.format("goal can be simplified to FALSE." + "no search will solve it%n%n"));
+				System.exit(0);
+			}
+
+			Plan[] planos = new Plan[4];
+			AEstrela busca = null;
+			matrizResposta = new long[4][4];
+			for (int j = 0; j < planos.length; j++) {
+				
+				int timeout = (int) arguments.get(Planner.TIMEOUT);
+				double weight = (double) arguments.get(StateSpacePlanner.WEIGHT);
+				switch (j) {
+				case 0:
+					busca = new AEstrela(NovaHeuristica.Type.HL, weight, timeout);					
+					break;
+				case 1:
+					busca = new AEstrela(NovaHeuristica.Type.MAX, weight, timeout);					
+					break;
+				case 2:
+					busca = new AEstrela(NovaHeuristica.Type.SUM, weight, timeout);					
+					break;
+				case 3:
+					busca = new AEstrela(NovaHeuristica.Type.FAST_FORWARD, weight, timeout);					
+					break;
+				}
+				planos[j] = busca.searchPlan(pb);
+				
+				
+				System.out.println("****************************************** " + busca.getHeuristicType() + " ******************************************");
+				if (planos[j] != null) {
+					Planner.getLogger().trace(String.format("%nPlano:%n%n" + pb.toString(planos[j])));
+					Planner.getLogger().trace(String.format("%nCusto do plano: %4.2f%n%n", planos[j].cost()));
+					System.out.println("Tempo de busca: " + busca.getSearchingTime());
+					matrizResposta[0][j] = busca.getSearchingTime();
+					System.out.println("Numero de estados visitados: " + busca.getExploredNodes());
+					matrizResposta[1][j] = busca.getExploredNodes();
+					System.out.println("Numero de estados gerados: " + busca.getCreatedNodes());
+					matrizResposta[2][j] = busca.getCreatedNodes();
+					System.out.println("Fator de ramificacao: " + (busca.getCreatedNodes() / busca.getExploredNodes()));
+					matrizResposta[3][j] = (busca.getCreatedNodes() / busca.getExploredNodes());
+
+				} else {
+					Planner.getLogger().trace(String.format(String.format("%nNenhum plano encontrado%n%n")));
+				}
+				
+			}
+			System.out.println("\nMatriz de resultados\n");
+			for (int linha = 0; linha < 4; linha++) {
+				for (int coluna = 0; coluna < 4; coluna++) {
+					System.out.print(matrizResposta[linha][coluna] + " ");
+				}
+				System.out.println();
+			}
 		}
-
-		final ASP planner = new ASP(arguments);
-		final ProblemFactory factory = ProblemFactory.getInstance();
-
-		File domain = (File) arguments.get(Planner.DOMAIN);
-		File problem = (File) arguments.get(Planner.PROBLEM);
-		ErrorManager errorManager = null;
-		try {
-			errorManager = factory.parse(domain, problem);
-		} catch (IOException e) {
-			Planner.getLogger().trace("\nunexpected error when parsing the PDDL planning problem description.");
-			System.exit(0);
-		}
-
-		if (!errorManager.isEmpty()) {
-			errorManager.printAll();
-			System.exit(0);
-		} else {
-			Planner.getLogger().trace("\nparsing domain file done successfully");
-			Planner.getLogger().trace("\nparsing problem file done successfully\n");
-		}
-
-		final CodedProblem pb = factory.encode();
-//		for (int i = 0; i < pb.getOperators().size(); i++) {
-//			for (int j = 0; j < pb.getRelevantFacts().size(); j++) {
-//				System.out.println(pb.getOperators().get(i).getName() + " op, "
-//		    		    + pb.getRelevantFacts().get(j).getVariable()+ " facts)\n");
-//			}
-//			
-//		}
-//		
-		Planner.getLogger().trace("\nencoding problem done successfully (" + pb.getOperators().size() + " ops, "
-				+ pb.getRelevantFacts().size() + " facts)\n");
-
-		if (!pb.isSolvable()) {
-			Planner.getLogger()
-					.trace(String.format("goal can be simplified to FALSE." + "no search will solve it%n%n"));
-			System.exit(0);
-		}
-		
-		int timeout = (int) arguments.get(Planner.TIMEOUT);
-		double weight = (double) arguments.get(StateSpacePlanner.WEIGHT); 
-		AEstrela busca = new AEstrela(NovaHeuristica.Type.FAST_FORWARD, weight, timeout);
-		Plan plan = busca.searchPlan(pb);
-
-		if (plan != null) {
-			System.out.println("\nFator de ramificacao: " + (busca.getCreatedNodes() / busca.getExploredNodes()));
-			System.out.println("\nNos visitados: " + busca.getExploredNodes());
-			System.out.println("\nNos gerados: " + busca.getCreatedNodes() );
-			System.out.println("\nMemoria usada: " + busca.getMemoryUsed());
-			System.out.println("\nTempo de busca: " + busca.getSearchingTime());
-			System.out.println("\nNos pendentes: " + busca.getPendingNodes());
-			
-			
-		  // Print plan information
-		  Planner.getLogger().trace(String.format("%nfound plan as follows:%n%n" + pb.toString(plan)));
-		  Planner.getLogger().trace(String.format("%nplan total cost: %4.2f%n%n", plan.cost()));
-		} else {
-		  Planner.getLogger().trace(String.format(String.format("%nno plan found%n%n")));
-		}
-
 	}
 
 	/**

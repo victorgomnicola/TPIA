@@ -1,0 +1,1386 @@
+***************************** robot-box-domain *****************************************
+C:\Users\Avell\eclipse-workspace\TPIA\src\ep1\problem1.pddl
+
+parsing domain file done successfully
+parsing problem file done successfully
+
+encoding problem done successfully (34 ops, 20 facts)
+****************************************** HL ******************************************
+
+Plano:
+
+00: (  pickup box1 left room1) [1]
+01: ( pickup box2 right room1) [1]
+02: (        move room1 room2) [1]
+03: ( putdown box1 left room2) [1]
+04: (putdown box2 right room2) [1]
+05: (        move room2 room1) [1]
+06: (  pickup box3 left room1) [1]
+07: ( pickup box4 right room1) [1]
+08: (        move room1 room2) [1]
+09: ( putdown box3 left room2) [1]
+10: (putdown box4 right room2) [1]
+
+Custo do plano: 11,00
+
+Tempo de busca: 10
+Numero de estados visitados: 249
+Numero de estados gerados: 874
+Fator de ramificacao: 3
+****************************************** MAX ******************************************
+
+Plano:
+
+00: (  pickup box4 left room1) [1]
+01: ( pickup box3 right room1) [1]
+02: (        move room1 room2) [1]
+03: ( putdown box4 left room2) [1]
+04: (putdown box3 right room2) [1]
+05: (        move room2 room1) [1]
+06: ( pickup box2 right room1) [1]
+07: (  pickup box1 left room1) [1]
+08: (        move room1 room2) [1]
+09: (putdown box2 right room2) [1]
+10: ( putdown box1 left room2) [1]
+
+Custo do plano: 11,00
+
+Tempo de busca: 19
+Numero de estados visitados: 214
+Numero de estados gerados: 724
+Fator de ramificacao: 3
+****************************************** SUM ******************************************
+
+Plano:
+
+00: (  pickup box2 left room1) [1]
+01: ( pickup box3 right room1) [1]
+02: (        move room1 room2) [1]
+03: ( putdown box2 left room2) [1]
+04: (putdown box3 right room2) [1]
+05: (        move room2 room1) [1]
+06: (  pickup box1 left room1) [1]
+07: ( pickup box4 right room1) [1]
+08: (        move room1 room2) [1]
+09: ( putdown box1 left room2) [1]
+10: (putdown box4 right room2) [1]
+
+Custo do plano: 11,00
+
+Tempo de busca: 2
+Numero de estados visitados: 37
+Numero de estados gerados: 153
+Fator de ramificacao: 4
+****************************************** FAST_FORWARD ******************************************
+
+Plano:
+
+00: (  pickup box1 left room1) [1]
+01: ( pickup box3 right room1) [1]
+02: (        move room1 room2) [1]
+03: (putdown box3 right room2) [1]
+04: ( putdown box1 left room2) [1]
+05: (        move room2 room1) [1]
+06: ( pickup box4 right room1) [1]
+07: (  pickup box2 left room1) [1]
+08: (        move room1 room2) [1]
+09: (putdown box4 right room2) [1]
+10: ( putdown box2 left room2) [1]
+
+Custo do plano: 11,00
+
+Tempo de busca: 3
+Numero de estados visitados: 91
+Numero de estados gerados: 314
+Fator de ramificacao: 3
+
+Matriz de resultados
+
+10 19 2 3 
+249 214 37 91 
+874 724 153 314 
+3 3 4 3 
+***************************** robot-box-domain *****************************************
+C:\Users\Avell\eclipse-workspace\TPIA\src\ep1\problem2.pddl
+
+parsing domain file done successfully
+parsing problem file done successfully
+
+encoding problem done successfully (18 ops, 12 facts)
+****************************************** HL ******************************************
+
+Plano:
+
+0: ( pickup box2 right room1) [1]
+1: (  pickup box1 left room1) [1]
+2: (        move room1 room2) [1]
+3: (putdown box2 right room2) [1]
+4: ( putdown box1 left room2) [1]
+
+Custo do plano: 5,00
+
+Tempo de busca: 0
+Numero de estados visitados: 25
+Numero de estados gerados: 66
+Fator de ramificacao: 2
+****************************************** MAX ******************************************
+
+Plano:
+
+0: (  pickup box2 left room1) [1]
+1: ( pickup box1 right room1) [1]
+2: (        move room1 room2) [1]
+3: ( putdown box2 left room2) [1]
+4: (putdown box1 right room2) [1]
+
+Custo do plano: 5,00
+
+Tempo de busca: 1
+Numero de estados visitados: 15
+Numero de estados gerados: 39
+Fator de ramificacao: 2
+****************************************** SUM ******************************************
+
+Plano:
+
+0: (  pickup box2 left room1) [1]
+1: ( pickup box1 right room1) [1]
+2: (        move room1 room2) [1]
+3: (putdown box1 right room2) [1]
+4: ( putdown box2 left room2) [1]
+
+Custo do plano: 5,00
+
+Tempo de busca: 0
+Numero de estados visitados: 10
+Numero de estados gerados: 29
+Fator de ramificacao: 2
+****************************************** FAST_FORWARD ******************************************
+
+Plano:
+
+0: (  pickup box1 left room1) [1]
+1: ( pickup box2 right room1) [1]
+2: (        move room1 room2) [1]
+3: (putdown box2 right room2) [1]
+4: ( putdown box1 left room2) [1]
+
+Custo do plano: 5,00
+
+Tempo de busca: 1
+Numero de estados visitados: 10
+Numero de estados gerados: 29
+Fator de ramificacao: 2
+
+Matriz de resultados
+
+0 1 0 1 
+25 15 10 10 
+66 39 29 29 
+2 2 2 2 
+***************************** robot-box-domain *****************************************
+C:\Users\Avell\eclipse-workspace\TPIA\src\ep1\problem3.pddl
+
+parsing domain file done successfully
+parsing problem file done successfully
+
+encoding problem done successfully (26 ops, 16 facts)
+****************************************** HL ******************************************
+
+Plano:
+
+0: ( pickup box3 right room1) [1]
+1: (  pickup box2 left room1) [1]
+2: (        move room1 room2) [1]
+3: (putdown box3 right room2) [1]
+4: ( putdown box2 left room2) [1]
+5: (        move room2 room1) [1]
+6: ( pickup box1 right room1) [1]
+7: (        move room1 room2) [1]
+8: (putdown box1 right room2) [1]
+
+Custo do plano: 9,00
+
+Tempo de busca: 0
+Numero de estados visitados: 87
+Numero de estados gerados: 272
+Fator de ramificacao: 3
+****************************************** MAX ******************************************
+
+Plano:
+
+0: (  pickup box3 left room1) [1]
+1: (        move room1 room2) [1]
+2: ( putdown box3 left room2) [1]
+3: (        move room2 room1) [1]
+4: (  pickup box1 left room1) [1]
+5: ( pickup box2 right room1) [1]
+6: (        move room1 room2) [1]
+7: ( putdown box1 left room2) [1]
+8: (putdown box2 right room2) [1]
+
+Custo do plano: 9,00
+
+Tempo de busca: 2
+Numero de estados visitados: 80
+Numero de estados gerados: 250
+Fator de ramificacao: 3
+****************************************** SUM ******************************************
+
+Plano:
+
+0: ( pickup box3 right room1) [1]
+1: (  pickup box2 left room1) [1]
+2: (        move room1 room2) [1]
+3: ( putdown box2 left room2) [1]
+4: (putdown box3 right room2) [1]
+5: (        move room2 room1) [1]
+6: ( pickup box1 right room1) [1]
+7: (        move room1 room2) [1]
+8: (putdown box1 right room2) [1]
+
+Custo do plano: 9,00
+
+Tempo de busca: 1
+Numero de estados visitados: 25
+Numero de estados gerados: 86
+Fator de ramificacao: 3
+****************************************** FAST_FORWARD ******************************************
+
+Plano:
+
+0: ( pickup box3 right room1) [1]
+1: (  pickup box2 left room1) [1]
+2: (        move room1 room2) [1]
+3: ( putdown box2 left room2) [1]
+4: (        move room2 room1) [1]
+5: (  pickup box1 left room1) [1]
+6: (        move room1 room2) [1]
+7: (putdown box3 right room2) [1]
+8: ( putdown box1 left room2) [1]
+
+Custo do plano: 9,00
+
+Tempo de busca: 2
+Numero de estados visitados: 54
+Numero de estados gerados: 171
+Fator de ramificacao: 3
+
+Matriz de resultados
+
+0 2 1 2 
+87 80 25 54 
+272 250 86 171 
+3 3 3 3 
+***************************** robot-box-domain *****************************************
+C:\Users\Avell\eclipse-workspace\TPIA\src\ep1\problem4.pddl
+
+parsing domain file done successfully
+parsing problem file done successfully
+
+encoding problem done successfully (34 ops, 20 facts)
+****************************************** HL ******************************************
+
+Plano:
+
+00: (  pickup box1 left room1) [1]
+01: ( pickup box2 right room1) [1]
+02: (        move room1 room2) [1]
+03: ( putdown box1 left room2) [1]
+04: (putdown box2 right room2) [1]
+05: (        move room2 room1) [1]
+06: (  pickup box3 left room1) [1]
+07: ( pickup box4 right room1) [1]
+08: (        move room1 room2) [1]
+09: ( putdown box3 left room2) [1]
+10: (putdown box4 right room2) [1]
+
+Custo do plano: 11,00
+
+Tempo de busca: 2
+Numero de estados visitados: 249
+Numero de estados gerados: 874
+Fator de ramificacao: 3
+****************************************** MAX ******************************************
+
+Plano:
+
+00: (  pickup box4 left room1) [1]
+01: ( pickup box3 right room1) [1]
+02: (        move room1 room2) [1]
+03: ( putdown box4 left room2) [1]
+04: (putdown box3 right room2) [1]
+05: (        move room2 room1) [1]
+06: ( pickup box2 right room1) [1]
+07: (  pickup box1 left room1) [1]
+08: (        move room1 room2) [1]
+09: (putdown box2 right room2) [1]
+10: ( putdown box1 left room2) [1]
+
+Custo do plano: 11,00
+
+Tempo de busca: 12
+Numero de estados visitados: 214
+Numero de estados gerados: 724
+Fator de ramificacao: 3
+****************************************** SUM ******************************************
+
+Plano:
+
+00: (  pickup box2 left room1) [1]
+01: ( pickup box3 right room1) [1]
+02: (        move room1 room2) [1]
+03: ( putdown box2 left room2) [1]
+04: (putdown box3 right room2) [1]
+05: (        move room2 room1) [1]
+06: (  pickup box1 left room1) [1]
+07: ( pickup box4 right room1) [1]
+08: (        move room1 room2) [1]
+09: ( putdown box1 left room2) [1]
+10: (putdown box4 right room2) [1]
+
+Custo do plano: 11,00
+
+Tempo de busca: 3
+Numero de estados visitados: 37
+Numero de estados gerados: 153
+Fator de ramificacao: 4
+****************************************** FAST_FORWARD ******************************************
+
+Plano:
+
+00: (  pickup box1 left room1) [1]
+01: ( pickup box3 right room1) [1]
+02: (        move room1 room2) [1]
+03: (putdown box3 right room2) [1]
+04: ( putdown box1 left room2) [1]
+05: (        move room2 room1) [1]
+06: ( pickup box4 right room1) [1]
+07: (  pickup box2 left room1) [1]
+08: (        move room1 room2) [1]
+09: (putdown box4 right room2) [1]
+10: ( putdown box2 left room2) [1]
+
+Custo do plano: 11,00
+
+Tempo de busca: 6
+Numero de estados visitados: 91
+Numero de estados gerados: 314
+Fator de ramificacao: 3
+
+Matriz de resultados
+
+2 12 3 6 
+249 214 37 91 
+874 724 153 314 
+3 3 4 3 
+***************************** robot-box-domain *****************************************
+C:\Users\Avell\eclipse-workspace\TPIA\src\ep1\problem5.pddl
+
+parsing domain file done successfully
+parsing problem file done successfully
+
+encoding problem done successfully (42 ops, 24 facts)
+****************************************** HL ******************************************
+
+Plano:
+
+00: ( pickup box4 right room1) [1]
+01: (        move room1 room2) [1]
+02: (putdown box4 right room2) [1]
+03: (        move room2 room1) [1]
+04: ( pickup box2 right room1) [1]
+05: (  pickup box5 left room1) [1]
+06: (        move room1 room2) [1]
+07: ( putdown box5 left room2) [1]
+08: (putdown box2 right room2) [1]
+09: (        move room2 room1) [1]
+10: ( pickup box3 right room1) [1]
+11: (  pickup box1 left room1) [1]
+12: (        move room1 room2) [1]
+13: ( putdown box1 left room2) [1]
+14: (putdown box3 right room2) [1]
+
+Custo do plano: 15,00
+
+Tempo de busca: 15
+Numero de estados visitados: 703
+Numero de estados gerados: 2612
+Fator de ramificacao: 3
+****************************************** MAX ******************************************
+
+Plano:
+
+00: (  pickup box4 left room1) [1]
+01: ( pickup box1 right room1) [1]
+02: (        move room1 room2) [1]
+03: ( putdown box4 left room2) [1]
+04: (putdown box1 right room2) [1]
+05: (        move room2 room1) [1]
+06: ( pickup box5 right room1) [1]
+07: (        move room1 room2) [1]
+08: (putdown box5 right room2) [1]
+09: (        move room2 room1) [1]
+10: (  pickup box3 left room1) [1]
+11: ( pickup box2 right room1) [1]
+12: (        move room1 room2) [1]
+13: ( putdown box3 left room2) [1]
+14: (putdown box2 right room2) [1]
+
+Custo do plano: 15,00
+
+Tempo de busca: 51
+Numero de estados visitados: 686
+Numero de estados gerados: 2546
+Fator de ramificacao: 3
+****************************************** SUM ******************************************
+
+Plano:
+
+00: ( pickup box5 right room1) [1]
+01: (  pickup box4 left room1) [1]
+02: (        move room1 room2) [1]
+03: ( putdown box4 left room2) [1]
+04: (putdown box5 right room2) [1]
+05: (        move room2 room1) [1]
+06: ( pickup box2 right room1) [1]
+07: (  pickup box3 left room1) [1]
+08: (        move room1 room2) [1]
+09: (putdown box2 right room2) [1]
+10: ( putdown box3 left room2) [1]
+11: (        move room2 room1) [1]
+12: ( pickup box1 right room1) [1]
+13: (        move room1 room2) [1]
+14: (putdown box1 right room2) [1]
+
+Custo do plano: 15,00
+
+Tempo de busca: 15
+Numero de estados visitados: 155
+Numero de estados gerados: 714
+Fator de ramificacao: 4
+****************************************** FAST_FORWARD ******************************************
+
+Plano:
+
+00: (  pickup box2 left room1) [1]
+01: ( pickup box3 right room1) [1]
+02: (        move room1 room2) [1]
+03: (putdown box3 right room2) [1]
+04: ( putdown box2 left room2) [1]
+05: (        move room2 room1) [1]
+06: ( pickup box4 right room1) [1]
+07: (  pickup box5 left room1) [1]
+08: (        move room1 room2) [1]
+09: ( putdown box5 left room2) [1]
+10: (        move room2 room1) [1]
+11: (  pickup box1 left room1) [1]
+12: (        move room1 room2) [1]
+13: (putdown box4 right room2) [1]
+14: ( putdown box1 left room2) [1]
+
+Custo do plano: 15,00
+
+Tempo de busca: 26
+Numero de estados visitados: 582
+Numero de estados gerados: 2206
+Fator de ramificacao: 3
+
+Matriz de resultados
+
+15 51 15 26 
+703 686 155 582 
+2612 2546 714 2206 
+3 3 4 3 
+***************************** robot-box-domain *****************************************
+C:\Users\Avell\eclipse-workspace\TPIA\src\ep1\problem6.pddl
+
+parsing domain file done successfully
+parsing problem file done successfully
+
+encoding problem done successfully (50 ops, 28 facts)
+****************************************** HL ******************************************
+
+Plano:
+
+00: (  pickup box4 left room1) [1]
+01: ( pickup box5 right room1) [1]
+02: (        move room1 room2) [1]
+03: (putdown box5 right room2) [1]
+04: ( putdown box4 left room2) [1]
+05: (        move room2 room1) [1]
+06: ( pickup box2 right room1) [1]
+07: (  pickup box3 left room1) [1]
+08: (        move room1 room2) [1]
+09: ( putdown box3 left room2) [1]
+10: (putdown box2 right room2) [1]
+11: (        move room2 room1) [1]
+12: ( pickup box1 right room1) [1]
+13: (  pickup box6 left room1) [1]
+14: (        move room1 room2) [1]
+15: ( putdown box6 left room2) [1]
+16: (putdown box1 right room2) [1]
+
+Custo do plano: 17,00
+
+Tempo de busca: 17
+Numero de estados visitados: 1843
+Numero de estados gerados: 7194
+Fator de ramificacao: 3
+****************************************** MAX ******************************************
+
+Plano:
+
+00: (  pickup box2 left room1) [1]
+01: ( pickup box5 right room1) [1]
+02: (        move room1 room2) [1]
+03: (putdown box5 right room2) [1]
+04: ( putdown box2 left room2) [1]
+05: (        move room2 room1) [1]
+06: ( pickup box1 right room1) [1]
+07: (  pickup box3 left room1) [1]
+08: (        move room1 room2) [1]
+09: ( putdown box3 left room2) [1]
+10: (putdown box1 right room2) [1]
+11: (        move room2 room1) [1]
+12: ( pickup box6 right room1) [1]
+13: (  pickup box4 left room1) [1]
+14: (        move room1 room2) [1]
+15: (putdown box6 right room2) [1]
+16: ( putdown box4 left room2) [1]
+
+Custo do plano: 17,00
+
+Tempo de busca: 81
+Numero de estados visitados: 1770
+Numero de estados gerados: 6734
+Fator de ramificacao: 3
+****************************************** SUM ******************************************
+
+Plano:
+
+00: (  pickup box6 left room1) [1]
+01: ( pickup box3 right room1) [1]
+02: (        move room1 room2) [1]
+03: (putdown box3 right room2) [1]
+04: ( putdown box6 left room2) [1]
+05: (        move room2 room1) [1]
+06: (  pickup box4 left room1) [1]
+07: ( pickup box5 right room1) [1]
+08: (        move room1 room2) [1]
+09: ( putdown box4 left room2) [1]
+10: (putdown box5 right room2) [1]
+11: (        move room2 room1) [1]
+12: ( pickup box1 right room1) [1]
+13: (  pickup box2 left room1) [1]
+14: (        move room1 room2) [1]
+15: (putdown box1 right room2) [1]
+16: ( putdown box2 left room2) [1]
+
+Custo do plano: 17,00
+
+Tempo de busca: 11
+Numero de estados visitados: 69
+Numero de estados gerados: 398
+Fator de ramificacao: 5
+****************************************** FAST_FORWARD ******************************************
+
+Plano:
+
+00: ( pickup box2 right room1) [1]
+01: (  pickup box3 left room1) [1]
+02: (        move room1 room2) [1]
+03: ( putdown box3 left room2) [1]
+04: (putdown box2 right room2) [1]
+05: (        move room2 room1) [1]
+06: ( pickup box1 right room1) [1]
+07: (  pickup box4 left room1) [1]
+08: (        move room1 room2) [1]
+09: ( putdown box4 left room2) [1]
+10: (putdown box1 right room2) [1]
+11: (        move room2 room1) [1]
+12: ( pickup box6 right room1) [1]
+13: (  pickup box5 left room1) [1]
+14: (        move room1 room2) [1]
+15: (putdown box6 right room2) [1]
+16: ( putdown box5 left room2) [1]
+
+Custo do plano: 17,00
+
+Tempo de busca: 67
+Numero de estados visitados: 1200
+Numero de estados gerados: 4729
+Fator de ramificacao: 3
+
+Matriz de resultados
+
+17 81 11 67 
+1843 1770 69 1200 
+7194 6734 398 4729 
+3 3 5 3 
+***************************** robot-box-domain *****************************************
+C:\Users\Avell\eclipse-workspace\TPIA\src\ep1\problem7.pddl
+
+parsing domain file done successfully
+parsing problem file done successfully
+
+encoding problem done successfully (58 ops, 32 facts)
+****************************************** HL ******************************************
+
+Plano:
+
+00: (  pickup box4 left room1) [1]
+01: ( pickup box2 right room1) [1]
+02: (        move room1 room2) [1]
+03: (putdown box2 right room2) [1]
+04: ( putdown box4 left room2) [1]
+05: (        move room2 room1) [1]
+06: ( pickup box7 right room1) [1]
+07: (  pickup box1 left room1) [1]
+08: (        move room1 room2) [1]
+09: (putdown box7 right room2) [1]
+10: ( putdown box1 left room2) [1]
+11: (        move room2 room1) [1]
+12: (  pickup box5 left room1) [1]
+13: (        move room1 room2) [1]
+14: ( putdown box5 left room2) [1]
+15: (        move room2 room1) [1]
+16: (  pickup box6 left room1) [1]
+17: ( pickup box3 right room1) [1]
+18: (        move room1 room2) [1]
+19: (putdown box3 right room2) [1]
+20: ( putdown box6 left room2) [1]
+
+Custo do plano: 21,00
+
+Tempo de busca: 44
+Numero de estados visitados: 4735
+Numero de estados gerados: 19056
+Fator de ramificacao: 4
+****************************************** MAX ******************************************
+
+Plano:
+
+00: (  pickup box4 left room1) [1]
+01: ( pickup box1 right room1) [1]
+02: (        move room1 room2) [1]
+03: ( putdown box4 left room2) [1]
+04: (putdown box1 right room2) [1]
+05: (        move room2 room1) [1]
+06: (  pickup box2 left room1) [1]
+07: ( pickup box5 right room1) [1]
+08: (        move room1 room2) [1]
+09: (putdown box5 right room2) [1]
+10: ( putdown box2 left room2) [1]
+11: (        move room2 room1) [1]
+12: (  pickup box3 left room1) [1]
+13: (        move room1 room2) [1]
+14: ( putdown box3 left room2) [1]
+15: (        move room2 room1) [1]
+16: ( pickup box7 right room1) [1]
+17: (  pickup box6 left room1) [1]
+18: (        move room1 room2) [1]
+19: (putdown box7 right room2) [1]
+20: ( putdown box6 left room2) [1]
+
+Custo do plano: 21,00
+
+Tempo de busca: 190
+Numero de estados visitados: 4711
+Numero de estados gerados: 18936
+Fator de ramificacao: 4
+****************************************** SUM ******************************************
+
+Plano:
+
+00: (  pickup box4 left room1) [1]
+01: ( pickup box3 right room1) [1]
+02: (        move room1 room2) [1]
+03: ( putdown box4 left room2) [1]
+04: (putdown box3 right room2) [1]
+05: (        move room2 room1) [1]
+06: ( pickup box1 right room1) [1]
+07: (  pickup box2 left room1) [1]
+08: (        move room1 room2) [1]
+09: (putdown box1 right room2) [1]
+10: ( putdown box2 left room2) [1]
+11: (        move room2 room1) [1]
+12: ( pickup box5 right room1) [1]
+13: (  pickup box6 left room1) [1]
+14: (        move room1 room2) [1]
+15: (putdown box5 right room2) [1]
+16: ( putdown box6 left room2) [1]
+17: (        move room2 room1) [1]
+18: ( pickup box7 right room1) [1]
+19: (        move room1 room2) [1]
+20: (putdown box7 right room2) [1]
+
+Custo do plano: 21,00
+
+Tempo de busca: 66
+Numero de estados visitados: 1002
+Numero de estados gerados: 5110
+Fator de ramificacao: 5
+****************************************** FAST_FORWARD ******************************************
+
+Plano:
+
+00: ( pickup box4 right room1) [1]
+01: (  pickup box6 left room1) [1]
+02: (        move room1 room2) [1]
+03: ( putdown box6 left room2) [1]
+04: (putdown box4 right room2) [1]
+05: (        move room2 room1) [1]
+06: (  pickup box2 left room1) [1]
+07: ( pickup box3 right room1) [1]
+08: (        move room1 room2) [1]
+09: (putdown box3 right room2) [1]
+10: ( putdown box2 left room2) [1]
+11: (        move room2 room1) [1]
+12: ( pickup box5 right room1) [1]
+13: (  pickup box7 left room1) [1]
+14: (        move room1 room2) [1]
+15: ( putdown box7 left room2) [1]
+16: (        move room2 room1) [1]
+17: (  pickup box1 left room1) [1]
+18: (        move room1 room2) [1]
+19: (putdown box5 right room2) [1]
+20: ( putdown box1 left room2) [1]
+
+Custo do plano: 21,00
+
+Tempo de busca: 41
+Numero de estados visitados: 4478
+Numero de estados gerados: 18168
+Fator de ramificacao: 4
+
+Matriz de resultados
+
+44 190 66 41 
+4735 4711 1002 4478 
+19056 18936 5110 18168 
+4 4 5 4 
+***************************** robot-box-domain *****************************************
+C:\Users\Avell\eclipse-workspace\TPIA\src\ep1\problem8.pddl
+
+parsing domain file done successfully
+parsing problem file done successfully
+
+encoding problem done successfully (66 ops, 36 facts)
+****************************************** HL ******************************************
+
+Plano:
+
+00: ( pickup box8 right room1) [1]
+01: (  pickup box5 left room1) [1]
+02: (        move room1 room2) [1]
+03: (putdown box8 right room2) [1]
+04: ( putdown box5 left room2) [1]
+05: (        move room2 room1) [1]
+06: (  pickup box4 left room1) [1]
+07: ( pickup box7 right room1) [1]
+08: (        move room1 room2) [1]
+09: (putdown box7 right room2) [1]
+10: ( putdown box4 left room2) [1]
+11: (        move room2 room1) [1]
+12: (  pickup box2 left room1) [1]
+13: ( pickup box3 right room1) [1]
+14: (        move room1 room2) [1]
+15: (putdown box3 right room2) [1]
+16: ( putdown box2 left room2) [1]
+17: (        move room2 room1) [1]
+18: (  pickup box6 left room1) [1]
+19: ( pickup box1 right room1) [1]
+20: (        move room1 room2) [1]
+21: (putdown box1 right room2) [1]
+22: ( putdown box6 left room2) [1]
+
+Custo do plano: 23,00
+
+Tempo de busca: 63
+Numero de estados visitados: 11761
+Numero de estados gerados: 48594
+Fator de ramificacao: 4
+****************************************** MAX ******************************************
+
+Plano:
+
+00: ( pickup box2 right room1) [1]
+01: (  pickup box7 left room1) [1]
+02: (        move room1 room2) [1]
+03: ( putdown box7 left room2) [1]
+04: (putdown box2 right room2) [1]
+05: (        move room2 room1) [1]
+06: ( pickup box4 right room1) [1]
+07: (  pickup box5 left room1) [1]
+08: (        move room1 room2) [1]
+09: (putdown box4 right room2) [1]
+10: ( putdown box5 left room2) [1]
+11: (        move room2 room1) [1]
+12: (  pickup box1 left room1) [1]
+13: ( pickup box3 right room1) [1]
+14: (        move room1 room2) [1]
+15: (putdown box3 right room2) [1]
+16: ( putdown box1 left room2) [1]
+17: (        move room2 room1) [1]
+18: ( pickup box8 right room1) [1]
+19: (  pickup box6 left room1) [1]
+20: (        move room1 room2) [1]
+21: (putdown box8 right room2) [1]
+22: ( putdown box6 left room2) [1]
+
+Custo do plano: 23,00
+
+Tempo de busca: 620
+Numero de estados visitados: 11626
+Numero de estados gerados: 47496
+Fator de ramificacao: 4
+****************************************** SUM ******************************************
+
+Plano:
+
+00: (  pickup box2 left room1) [1]
+01: ( pickup box7 right room1) [1]
+02: (        move room1 room2) [1]
+03: ( putdown box2 left room2) [1]
+04: (putdown box7 right room2) [1]
+05: (        move room2 room1) [1]
+06: (  pickup box3 left room1) [1]
+07: ( pickup box5 right room1) [1]
+08: (        move room1 room2) [1]
+09: ( putdown box3 left room2) [1]
+10: (putdown box5 right room2) [1]
+11: (        move room2 room1) [1]
+12: ( pickup box1 right room1) [1]
+13: (  pickup box4 left room1) [1]
+14: (        move room1 room2) [1]
+15: (putdown box1 right room2) [1]
+16: ( putdown box4 left room2) [1]
+17: (        move room2 room1) [1]
+18: ( pickup box6 right room1) [1]
+19: (  pickup box8 left room1) [1]
+20: (        move room1 room2) [1]
+21: (putdown box6 right room2) [1]
+22: ( putdown box8 left room2) [1]
+
+Custo do plano: 23,00
+
+Tempo de busca: 64
+Numero de estados visitados: 582
+Numero de estados gerados: 3675
+Fator de ramificacao: 6
+****************************************** FAST_FORWARD ******************************************
+
+Plano:
+
+00: (  pickup box8 left room1) [1]
+01: ( pickup box4 right room1) [1]
+02: (        move room1 room2) [1]
+03: ( putdown box8 left room2) [1]
+04: (putdown box4 right room2) [1]
+05: (        move room2 room1) [1]
+06: (  pickup box3 left room1) [1]
+07: ( pickup box5 right room1) [1]
+08: (        move room1 room2) [1]
+09: (putdown box5 right room2) [1]
+10: ( putdown box3 left room2) [1]
+11: (        move room2 room1) [1]
+12: (  pickup box6 left room1) [1]
+13: ( pickup box7 right room1) [1]
+14: (        move room1 room2) [1]
+15: (putdown box7 right room2) [1]
+16: ( putdown box6 left room2) [1]
+17: (        move room2 room1) [1]
+18: ( pickup box2 right room1) [1]
+19: (  pickup box1 left room1) [1]
+20: (        move room1 room2) [1]
+21: (putdown box2 right room2) [1]
+22: ( putdown box1 left room2) [1]
+
+Custo do plano: 23,00
+
+Tempo de busca: 420
+Numero de estados visitados: 10152
+Numero de estados gerados: 42402
+Fator de ramificacao: 4
+
+Matriz de resultados
+
+63 620 64 420 
+11761 11626 582 10152 
+48594 47496 3675 42402 
+4 4 6 4 
+***************************** robot-box-domain *****************************************
+C:\Users\Avell\eclipse-workspace\TPIA\src\ep1\problem9.pddl
+
+parsing domain file done successfully
+parsing problem file done successfully
+
+encoding problem done successfully (74 ops, 40 facts)
+****************************************** HL ******************************************
+
+Plano:
+
+00: (  pickup box4 left room1) [1]
+01: ( pickup box1 right room1) [1]
+02: (        move room1 room2) [1]
+03: (putdown box1 right room2) [1]
+04: ( putdown box4 left room2) [1]
+05: (        move room2 room1) [1]
+06: ( pickup box3 right room1) [1]
+07: (  pickup box8 left room1) [1]
+08: (        move room1 room2) [1]
+09: (putdown box3 right room2) [1]
+10: ( putdown box8 left room2) [1]
+11: (        move room2 room1) [1]
+12: (  pickup box2 left room1) [1]
+13: ( pickup box5 right room1) [1]
+14: (        move room1 room2) [1]
+15: (putdown box5 right room2) [1]
+16: ( putdown box2 left room2) [1]
+17: (        move room2 room1) [1]
+18: ( pickup box9 right room1) [1]
+19: (  pickup box7 left room1) [1]
+20: (        move room1 room2) [1]
+21: ( putdown box7 left room2) [1]
+22: (putdown box9 right room2) [1]
+23: (        move room2 room1) [1]
+24: ( pickup box6 right room1) [1]
+25: (        move room1 room2) [1]
+26: (putdown box6 right room2) [1]
+
+Custo do plano: 27,00
+
+Tempo de busca: 216
+Numero de estados visitados: 28671
+Numero de estados gerados: 120812
+Fator de ramificacao: 4
+****************************************** MAX ******************************************
+
+Plano:
+
+00: (  pickup box8 left room1) [1]
+01: ( pickup box1 right room1) [1]
+02: (        move room1 room2) [1]
+03: ( putdown box8 left room2) [1]
+04: (putdown box1 right room2) [1]
+05: (        move room2 room1) [1]
+06: (  pickup box2 left room1) [1]
+07: ( pickup box4 right room1) [1]
+08: (        move room1 room2) [1]
+09: (putdown box4 right room2) [1]
+10: ( putdown box2 left room2) [1]
+11: (        move room2 room1) [1]
+12: (  pickup box5 left room1) [1]
+13: ( pickup box7 right room1) [1]
+14: (        move room1 room2) [1]
+15: (putdown box7 right room2) [1]
+16: ( putdown box5 left room2) [1]
+17: (        move room2 room1) [1]
+18: ( pickup box6 right room1) [1]
+19: (        move room1 room2) [1]
+20: (putdown box6 right room2) [1]
+21: (        move room2 room1) [1]
+22: ( pickup box9 right room1) [1]
+23: (  pickup box3 left room1) [1]
+24: (        move room1 room2) [1]
+25: (putdown box9 right room2) [1]
+26: ( putdown box3 left room2) [1]
+
+Custo do plano: 27,00
+
+Tempo de busca: 1281
+Numero de estados visitados: 28640
+Numero de estados gerados: 120622
+Fator de ramificacao: 4
+****************************************** SUM ******************************************
+
+Plano:
+
+00: ( pickup box2 right room1) [1]
+01: (  pickup box3 left room1) [1]
+02: (        move room1 room2) [1]
+03: (putdown box2 right room2) [1]
+04: ( putdown box3 left room2) [1]
+05: (        move room2 room1) [1]
+06: ( pickup box4 right room1) [1]
+07: (  pickup box6 left room1) [1]
+08: (        move room1 room2) [1]
+09: (putdown box4 right room2) [1]
+10: ( putdown box6 left room2) [1]
+11: (        move room2 room1) [1]
+12: ( pickup box1 right room1) [1]
+13: (  pickup box7 left room1) [1]
+14: (        move room1 room2) [1]
+15: ( putdown box7 left room2) [1]
+16: (putdown box1 right room2) [1]
+17: (        move room2 room1) [1]
+18: ( pickup box5 right room1) [1]
+19: (  pickup box9 left room1) [1]
+20: (        move room1 room2) [1]
+21: (putdown box5 right room2) [1]
+22: ( putdown box9 left room2) [1]
+23: (        move room2 room1) [1]
+24: (  pickup box8 left room1) [1]
+25: (        move room1 room2) [1]
+26: ( putdown box8 left room2) [1]
+
+Custo do plano: 27,00
+
+Tempo de busca: 312
+Numero de estados visitados: 2613
+Numero de estados gerados: 16510
+Fator de ramificacao: 6
+****************************************** FAST_FORWARD ******************************************
+
+Plano:
+
+00: (  pickup box4 left room1) [1]
+01: ( pickup box6 right room1) [1]
+02: (        move room1 room2) [1]
+03: ( putdown box4 left room2) [1]
+04: (putdown box6 right room2) [1]
+05: (        move room2 room1) [1]
+06: (  pickup box5 left room1) [1]
+07: ( pickup box8 right room1) [1]
+08: (        move room1 room2) [1]
+09: (putdown box8 right room2) [1]
+10: ( putdown box5 left room2) [1]
+11: (        move room2 room1) [1]
+12: (  pickup box1 left room1) [1]
+13: ( pickup box7 right room1) [1]
+14: (        move room1 room2) [1]
+15: (putdown box7 right room2) [1]
+16: ( putdown box1 left room2) [1]
+17: (        move room2 room1) [1]
+18: ( pickup box9 right room1) [1]
+19: (  pickup box3 left room1) [1]
+20: (        move room1 room2) [1]
+21: ( putdown box3 left room2) [1]
+22: (        move room2 room1) [1]
+23: (  pickup box2 left room1) [1]
+24: (        move room1 room2) [1]
+25: (putdown box9 right room2) [1]
+26: ( putdown box2 left room2) [1]
+
+Custo do plano: 27,00
+
+Tempo de busca: 382
+Numero de estados visitados: 28156
+Numero de estados gerados: 119065
+Fator de ramificacao: 4
+
+Matriz de resultados
+
+216 1281 312 382 
+28671 28640 2613 28156 
+120812 120622 16510 119065 
+4 4 6 4 
+***************************** robot-box-domain *****************************************
+C:\Users\Avell\eclipse-workspace\TPIA\src\ep1\problem10.pddl
+
+parsing domain file done successfully
+parsing problem file done successfully
+
+encoding problem done successfully (82 ops, 44 facts)
+****************************************** HL ******************************************
+
+Plano:
+
+00: (   pickup box8 left room1) [1]
+01: (  pickup box1 right room1) [1]
+02: (         move room1 room2) [1]
+03: (  putdown box8 left room2) [1]
+04: ( putdown box1 right room2) [1]
+05: (         move room2 room1) [1]
+06: (   pickup box2 left room1) [1]
+07: (  pickup box6 right room1) [1]
+08: (         move room1 room2) [1]
+09: ( putdown box6 right room2) [1]
+10: (  putdown box2 left room2) [1]
+11: (         move room2 room1) [1]
+12: ( pickup box10 right room1) [1]
+13: (   pickup box3 left room1) [1]
+14: (         move room1 room2) [1]
+15: (putdown box10 right room2) [1]
+16: (  putdown box3 left room2) [1]
+17: (         move room2 room1) [1]
+18: (  pickup box9 right room1) [1]
+19: (   pickup box7 left room1) [1]
+20: (         move room1 room2) [1]
+21: ( putdown box9 right room2) [1]
+22: (  putdown box7 left room2) [1]
+23: (         move room2 room1) [1]
+24: (   pickup box5 left room1) [1]
+25: (  pickup box4 right room1) [1]
+26: (         move room1 room2) [1]
+27: (  putdown box5 left room2) [1]
+28: ( putdown box4 right room2) [1]
+
+Custo do plano: 29,00
+
+Tempo de busca: 497
+Numero de estados visitados: 68601
+Numero de estados gerados: 293854
+Fator de ramificacao: 4
+****************************************** MAX ******************************************
+
+Plano:
+
+00: (  pickup box4 right room1) [1]
+01: (   pickup box5 left room1) [1]
+02: (         move room1 room2) [1]
+03: (  putdown box5 left room2) [1]
+04: ( putdown box4 right room2) [1]
+05: (         move room2 room1) [1]
+06: (  pickup box8 right room1) [1]
+07: (   pickup box9 left room1) [1]
+08: (         move room1 room2) [1]
+09: (  putdown box9 left room2) [1]
+10: ( putdown box8 right room2) [1]
+11: (         move room2 room1) [1]
+12: (  pickup box6 right room1) [1]
+13: (   pickup box7 left room1) [1]
+14: (         move room1 room2) [1]
+15: ( putdown box6 right room2) [1]
+16: (  putdown box7 left room2) [1]
+17: (         move room2 room1) [1]
+18: (  pickup box1 right room1) [1]
+19: (   pickup box2 left room1) [1]
+20: (         move room1 room2) [1]
+21: ( putdown box1 right room2) [1]
+22: (  putdown box2 left room2) [1]
+23: (         move room2 room1) [1]
+24: ( pickup box10 right room1) [1]
+25: (   pickup box3 left room1) [1]
+26: (         move room1 room2) [1]
+27: (  putdown box3 left room2) [1]
+28: (putdown box10 right room2) [1]
+
+Custo do plano: 29,00
+
+Tempo de busca: 843
+Numero de estados visitados: 68371
+Numero de estados gerados: 291627
+Fator de ramificacao: 4
+****************************************** SUM ******************************************
+
+Plano:
+
+00: (  pickup box2 left room1) [1]
+01: ( pickup box9 right room1) [1]
+02: (        move room1 room2) [1]
+03: ( putdown box2 left room2) [1]
+04: (putdown box9 right room2) [1]
+05: (        move room2 room1) [1]
+06: (  pickup box3 left room1) [1]
+07: ( pickup box4 right room1) [1]
+08: (        move room1 room2) [1]
+09: ( putdown box3 left room2) [1]
+10: (putdown box4 right room2) [1]
+11: (        move room2 room1) [1]
+12: ( pickup box8 right room1) [1]
+13: ( pickup box10 left room1) [1]
+14: (        move room1 room2) [1]
+15: (putdown box8 right room2) [1]
+16: (putdown box10 left room2) [1]
+17: (        move room2 room1) [1]
+18: ( pickup box1 right room1) [1]
+19: (  pickup box5 left room1) [1]
+20: (        move room1 room2) [1]
+21: (putdown box1 right room2) [1]
+22: ( putdown box5 left room2) [1]
+23: (        move room2 room1) [1]
+24: ( pickup box6 right room1) [1]
+25: (  pickup box7 left room1) [1]
+26: (        move room1 room2) [1]
+27: (putdown box6 right room2) [1]
+28: ( putdown box7 left room2) [1]
+
+Custo do plano: 29,00
+
+Tempo de busca: 22
+Numero de estados visitados: 910
+Numero de estados gerados: 7075
+Fator de ramificacao: 7
+****************************************** FAST_FORWARD ******************************************
+
+Plano:
+
+00: (   pickup box2 left room1) [1]
+01: (  pickup box5 right room1) [1]
+02: (         move room1 room2) [1]
+03: ( putdown box5 right room2) [1]
+04: (  putdown box2 left room2) [1]
+05: (         move room2 room1) [1]
+06: (   pickup box4 left room1) [1]
+07: (  pickup box6 right room1) [1]
+08: (         move room1 room2) [1]
+09: ( putdown box6 right room2) [1]
+10: (  putdown box4 left room2) [1]
+11: (         move room2 room1) [1]
+12: (   pickup box8 left room1) [1]
+13: (  pickup box9 right room1) [1]
+14: (         move room1 room2) [1]
+15: ( putdown box9 right room2) [1]
+16: (  putdown box8 left room2) [1]
+17: (         move room2 room1) [1]
+18: (   pickup box1 left room1) [1]
+19: (  pickup box7 right room1) [1]
+20: (         move room1 room2) [1]
+21: ( putdown box7 right room2) [1]
+22: (  putdown box1 left room2) [1]
+23: (         move room2 room1) [1]
+24: ( pickup box10 right room1) [1]
+25: (   pickup box3 left room1) [1]
+26: (         move room1 room2) [1]
+27: (putdown box10 right room2) [1]
+28: (  putdown box3 left room2) [1]
+
+Custo do plano: 29,00
+
+Tempo de busca: 958
+Numero de estados visitados: 65336
+Numero de estados gerados: 281184
+Fator de ramificacao: 4
+
+Matriz de resultados
+
+497 843 22 958 
+68601 68371 910 65336 
+293854 291627 7075 281184 
+4 4 7 4 
+***************************** tyreworld-domain *****************************************
+C:\Users\Avell\eclipse-workspace\TPIA\src\ep1\problem11.pddl
+
+parsing domain file done successfully
+parsing problem file done successfully
+
+encoding problem done successfully (35 ops, 35 facts)
+****************************************** HL ******************************************
+
+Plano:
+
+00: (               open boot) [1]
+01: (       fetch wrench boot) [1]
+02: (   loosen nuts1 the-hub1) [1]
+03: (           fetch r1 boot) [1]
+04: (         fetch jack boot) [1]
+05: (         fetch pump boot) [1]
+06: (        jack-up the-hub1) [1]
+07: (     undo nuts1 the-hub1) [1]
+08: (remove-wheel w1 the-hub1) [1]
+09: (put-on-wheel r1 the-hub1) [1]
+10: (        put-away w1 boot) [1]
+11: (    do-up nuts1 the-hub1) [1]
+12: (              inflate r1) [1]
+13: (      jack-down the-hub1) [1]
+14: (  tighten nuts1 the-hub1) [1]
+15: (      put-away pump boot) [1]
+16: (      put-away jack boot) [1]
+17: (    put-away wrench boot) [1]
+18: (              close boot) [1]
+
+Custo do plano: 19,00
+
+Tempo de busca: 4
+Numero de estados visitados: 1535
+Numero de estados gerados: 7165
+Fator de ramificacao: 4
+****************************************** MAX ******************************************
+
+Plano:
+
+00: (               open boot) [1]
+01: (       fetch wrench boot) [1]
+02: (         fetch jack boot) [1]
+03: (   loosen nuts1 the-hub1) [1]
+04: (        jack-up the-hub1) [1]
+05: (     undo nuts1 the-hub1) [1]
+06: (remove-wheel w1 the-hub1) [1]
+07: (           fetch r1 boot) [1]
+08: (put-on-wheel r1 the-hub1) [1]
+09: (    do-up nuts1 the-hub1) [1]
+10: (      jack-down the-hub1) [1]
+11: (         fetch pump boot) [1]
+12: (        put-away w1 boot) [1]
+13: (              inflate r1) [1]
+14: (  tighten nuts1 the-hub1) [1]
+15: (      put-away jack boot) [1]
+16: (    put-away wrench boot) [1]
+17: (      put-away pump boot) [1]
+18: (              close boot) [1]
+
+Custo do plano: 19,00
+
+Tempo de busca: 8
+Numero de estados visitados: 1294
+Numero de estados gerados: 6522
+Fator de ramificacao: 5
+****************************************** SUM ******************************************
+
+Plano:
+
+00: (               open boot) [1]
+01: (         fetch jack boot) [1]
+02: (       fetch wrench boot) [1]
+03: (   loosen nuts1 the-hub1) [1]
+04: (        jack-up the-hub1) [1]
+05: (     undo nuts1 the-hub1) [1]
+06: (remove-wheel w1 the-hub1) [1]
+07: (           fetch r1 boot) [1]
+08: (put-on-wheel r1 the-hub1) [1]
+09: (    do-up nuts1 the-hub1) [1]
+10: (      jack-down the-hub1) [1]
+11: (      put-away jack boot) [1]
+12: (        put-away w1 boot) [1]
+13: (  tighten nuts1 the-hub1) [1]
+14: (         fetch pump boot) [1]
+15: (              inflate r1) [1]
+16: (    put-away wrench boot) [1]
+17: (      put-away pump boot) [1]
+18: (              close boot) [1]
+
+Custo do plano: 19,00
+
+Tempo de busca: 2
+Numero de estados visitados: 138
+Numero de estados gerados: 882
+Fator de ramificacao: 6
+****************************************** FAST_FORWARD ******************************************
+
+Plano:
+
+00: (               open boot) [1]
+01: (         fetch jack boot) [1]
+02: (       fetch wrench boot) [1]
+03: (   loosen nuts1 the-hub1) [1]
+04: (        jack-up the-hub1) [1]
+05: (     undo nuts1 the-hub1) [1]
+06: (remove-wheel w1 the-hub1) [1]
+07: (           fetch r1 boot) [1]
+08: (put-on-wheel r1 the-hub1) [1]
+09: (    do-up nuts1 the-hub1) [1]
+10: (        put-away w1 boot) [1]
+11: (         fetch pump boot) [1]
+12: (              inflate r1) [1]
+13: (      jack-down the-hub1) [1]
+14: (  tighten nuts1 the-hub1) [1]
+15: (    put-away wrench boot) [1]
+16: (      put-away jack boot) [1]
+17: (      put-away pump boot) [1]
+18: (              close boot) [1]
+
+Custo do plano: 19,00
+
+Tempo de busca: 2
+Numero de estados visitados: 226
+Numero de estados gerados: 1070
+Fator de ramificacao: 4
+
+Matriz de resultados
+
+4 8 2 2 
+1535 1294 138 226 
+7165 6522 882 1070 
+4 5 6 4 
