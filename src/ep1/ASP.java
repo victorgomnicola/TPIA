@@ -1,23 +1,35 @@
 package ep1;
 
-import fr.uga.pddl4j.encoding.CodedProblem;
-import fr.uga.pddl4j.planners.statespace.AbstractStateSpacePlanner;
-import fr.uga.pddl4j.util.Plan;
-import fr.uga.pddl4j.planners.Planner;
-import fr.uga.pddl4j.planners.statespace.StateSpacePlanner;
-import fr.uga.pddl4j.planners.ProblemFactory;
-import fr.uga.pddl4j.parser.ErrorManager;
-import fr.uga.pddl4j.heuristics.relaxation.Heuristic;
-import fr.uga.pddl4j.planners.statespace.search.strategy.AStar;
-import fr.uga.pddl4j.planners.statespace.search.strategy.StateSpaceStrategy;
-import fr.uga.pddl4j.heuristics.relaxation.Heuristic;
-import fr.uga.pddl4j.planners.statespace.search.strategy.AStar;
-import fr.uga.pddl4j.planners.statespace.search.strategy.Node;
-import fr.uga.pddl4j.planners.statespace.search.strategy.StateSpaceStrategy;
-
+import heuristicas.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.PriorityQueue;
 import java.util.Properties;
+import java.util.Set;
+import java.util.LinkedList;
+import java.util.Comparator;
+import java.util.HashMap;
+
+import fr.uga.pddl4j.encoding.CodedProblem;
+import fr.uga.pddl4j.parser.ErrorManager;
+import fr.uga.pddl4j.planners.Planner;
+import fr.uga.pddl4j.planners.ProblemFactory;
+import fr.uga.pddl4j.planners.statespace.AbstractStateSpacePlanner;
+import fr.uga.pddl4j.planners.statespace.StateSpacePlanner;
+import fr.uga.pddl4j.util.BitOp;
+import fr.uga.pddl4j.util.BitState;
+import fr.uga.pddl4j.util.CondBitExp;
+import fr.uga.pddl4j.util.Plan;
+import fr.uga.pddl4j.util.SequentialPlan;
+import fr.uga.pddl4j.planners.statespace.search.strategy.Node;
+import fr.uga.pddl4j.planners.statespace.search.strategy.NodeComparator;
+
+
 
 /**
  * This class implements a simple forward planner based on A* algorithm.
@@ -42,21 +54,13 @@ public final class ASP extends AbstractStateSpacePlanner {
 		this.arguments = arguments;
 	}
 
-	/**
-	 * Solves the planning problem and returns the first solution search found.
-	 *
-	 * @param problem the problem to be solved.
-	 * @return a solution search or null if it does not exist.
-	 */
+	
+	
 	@Override
 	public Plan search(final CodedProblem problem) {
-	  int timeout = (int) this.arguments.get(Planner.TIMEOUT);
-	  double weight = (double) arguments.get(StateSpacePlanner.WEIGHT);         
-	  StateSpaceStrategy astar = new AStar(timeout, Heuristic.Type.FAST_FORWARD, weight);
-	  Node goalNode = astar.searchSolutionNode(problem);
-	  Planner.getLogger().trace(problem.toString(goalNode));
-	  return astar.extractPlan(goalNode, problem);
+		throw new UnsupportedOperationException();
 	}
+	
 	
 	/**
 	 * The main method of the <code>ASP</code> example. The command line syntax is
@@ -130,8 +134,20 @@ public final class ASP extends AbstractStateSpacePlanner {
 			System.exit(0);
 		}
 		
-		final Plan plan = planner.search(pb);
+		int timeout = (int) arguments.get(Planner.TIMEOUT);
+		double weight = (double) arguments.get(StateSpacePlanner.WEIGHT); 
+		AEstrela busca = new AEstrela(NovaHeuristica.Type.FAST_FORWARD, weight, timeout);
+		Plan plan = busca.searchPlan(pb);
+
 		if (plan != null) {
+			System.out.println("\nFator de ramificacao: " + (busca.getCreatedNodes() / busca.getExploredNodes()));
+			System.out.println("\nNos visitados: " + busca.getExploredNodes());
+			System.out.println("\nNos gerados: " + busca.getCreatedNodes() );
+			System.out.println("\nMemoria usada: " + busca.getMemoryUsed());
+			System.out.println("\nTempo de busca: " + busca.getSearchingTime());
+			System.out.println("\nNos pendentes: " + busca.getPendingNodes());
+			
+			
 		  // Print plan information
 		  Planner.getLogger().trace(String.format("%nfound plan as follows:%n%n" + pb.toString(plan)));
 		  Planner.getLogger().trace(String.format("%nplan total cost: %4.2f%n%n", plan.cost()));
