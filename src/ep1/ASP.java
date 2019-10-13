@@ -152,15 +152,20 @@ public final class ASP extends AbstractStateSpacePlanner {
 					busca = new AEstrela(NovaHeuristica.Type.FAST_FORWARD, weight, timeout);					
 					break;
 				}
-				planos[j] = busca.searchPlan(pb);
-				
+				long tempoMedio = 0;
+				for (int k = 0; k < 30; k++) {
+					busca.setSearchingTime(0);
+					planos[j] = busca.searchPlan(pb);
+					tempoMedio += busca.getSearchingTime();
+				}
+				tempoMedio /= 30;
 				
 				System.out.println("****************************************** " + busca.getHeuristicType() + " ******************************************");
 				if (planos[j] != null) {
 					Planner.getLogger().trace(String.format("%nPlano:%n%n" + pb.toString(planos[j])));
 					Planner.getLogger().trace(String.format("%nCusto do plano: %4.2f%n%n", planos[j].cost()));
-					System.out.println("Tempo de busca: " + busca.getSearchingTime());
-					matrizResposta[0][j] = busca.getSearchingTime();
+					System.out.println("Tempo de busca: " + tempoMedio);
+					matrizResposta[0][j] = tempoMedio;
 					System.out.println("Numero de estados visitados: " + busca.getExploredNodes());
 					matrizResposta[1][j] = busca.getExploredNodes();
 					System.out.println("Numero de estados gerados: " + busca.getCreatedNodes());
